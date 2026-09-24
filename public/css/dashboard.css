@@ -1,0 +1,349 @@
+/* Admin navbar */
+.admin-navbar {
+    height: 70px;
+    background-color: #181818;
+    border-bottom: 1px solid #2f2f2f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    color: #ffffff;
+}
+
+/* Navbar left section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Navbar title */
+.navbar-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Navbar right section */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Notification button */
+.navbar-icon {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Profile button */
+.profile-button {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+
+    .admin-navbar {
+        padding: 0 15px;
+    }
+
+    .navbar-title {
+        font-size: 17px;
+    }
+
+    .profile-button span {
+        display: none;
+    }
+
+}
+
+/* Admin sidebar */
+.admin-sidebar {
+    width: 250px;
+    min-height: calc(100vh - 20px);
+    background-color: #181818;
+    color: #ffffff;
+    flex-shrink: 0;
+    margin: 0px 2px 0px 0px;
+    padding: 20px 14px;
+    border-radius: 2px;
+}
+
+/* Sidebar logo */
+.sidebar-logo {
+    padding: 8px 12px 25px;
+}
+
+.sidebar-logo a {
+    text-decoration: none;
+}
+
+.netflix-logo {
+    color: #e50914;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Sidebar menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    margin-bottom: 5px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    color: #bdbdbd;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.sidebar-link i {
+    font-size: 18px;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    color: #ffffff;
+    background-color: #e50914;
+}
+
+/* Main admin wrapper */
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f9;
+}
+
+/* Main content area */
+.admin-main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Dashboard content */
+.admin-content {
+    padding: 30px;
+    background-color: #f5f5f9;
+    min-height: calc(100vh - 70px);
+}
+
+/* Dashboard heading */
+.dashboard-header {
+    margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 5px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.dashboard-header p {
+    margin: 0;
+    color: #777;
+}
+
+/* Dashboard card */
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 130px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Card text */
+.dashboard-card p {
+    margin: 0 0 8px;
+    color: #777;
+    font-size: 14px;
+}
+
+.dashboard-card h3 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Card icon */
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #e50914;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+/* Dashboard section */
+.dashboard-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-top: 30px;
+    padding: 24px;
+}
+
+/* Section header */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-header h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.view-all {
+    color: #e50914;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard table */
+.dashboard-table {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.dashboard-table th {
+    font-size: 13px;
+    color: #777;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.dashboard-table td {
+    font-size: 14px;
+}
+
+/* Status badge */
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.active {
+    background-color: #e8f7ee;
+    color: #198754;
+}
+
+.status-badge.inactive {
+    background-color: #fce8e8;
+    color: #dc3545;
+}
+
+
+/* Admin footer */
+.admin-footer {
+    background-color: #181818;
+    border-top: 1px solid #333333;
+    margin-top: 20px;
+    padding: 18px 30px;
+    text-align: center;
+}
+
+/* Footer text */
+.admin-footer p {
+    margin: 0;
+    color: #bdbdbd;
+    font-size: 13px;
+}
+
+/* Responsive dashboard */
+@media (max-width: 991px) {
+
+    .admin-sidebar {
+        position: fixed;
+        top: 10px;
+        left: -270px;
+        width: 250px;
+        height: calc(100vh - 20px);
+        margin: 0;
+        z-index: 1050;
+        transition: left 0.3s ease;
+    }
+
+    .admin-sidebar.show {
+        left: 10px;
+    }
+
+    .admin-main {
+        width: 100%;
+    }
+
+    .admin-content {
+        padding: 25px 20px;
+    }
+
+}
+
+/* Small screens */
+@media (max-width: 576px) {
+
+    .admin-content {
+        padding: 20px 15px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 24px;
+    }
+
+    .dashboard-section {
+        padding: 15px;
+    }
+
+    .admin-footer {
+        padding: 15px;
+    }
+
+}

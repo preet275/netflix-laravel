@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #141414;
+}
+
+/* Login Page */
+
+.login-page {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.9)
+        ),
+        radial-gradient(
+            circle at center,
+            #3b0000 0%,
+            #141414 65%
+        );
+}
+
+/* Login Card */
+
+.login-card {
+    background: #1f1f1f;
+
+    padding: 40px;
+
+    border-radius: 10px;
+
+    border: 1px solid #333;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.login-card h2 {
+    color: #fff;
+
+    font-size: 30px;
+
+    font-weight: 600;
+}
+
+/* Labels */
+
+.login-card .form-label {
+    color: #ddd;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+/* Inputs */
+
+.login-card .form-control {
+    height: 50px;
+
+    background: #2b2b2b;
+
+    border: 1px solid #444;
+
+    color: #fff;
+
+    border-radius: 6px;
+
+    padding: 12px 14px;
+}
+
+.login-card .form-control::placeholder {
+    color: #999;
+}
+
+.login-card .form-control:focus {
+    background: #2b2b2b;
+
+    color: #fff;
+
+    border-color: #e50914;
+
+    box-shadow: none;
+}
+
+/* Remember Me */
+
+.login-card .form-check-label {
+    color: #aaa;
+
+    font-size: 13px;
+}
+
+.login-card .form-check-input {
+    background-color: #333;
+
+    border-color: #555;
+}
+
+.login-card .form-check-input:checked {
+    background-color: #e50914;
+
+    border-color: #e50914;
+}
+
+/* Forgot Password */
+
+.forgot-password {
+    color: #aaa;
+
+    font-size: 13px;
+
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #fff;
+}
+
+/* Sign In Button */
+
+.login-card .btn-danger {
+    height: 50px;
+
+    background: #e50914;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+.login-card .btn-danger:hover {
+    background: #c40812;
+}
+
+/* Mobile */
+
+@media (max-width: 576px) {
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+    .login-card h2 {
+        font-size: 26px;
+    }
+}
