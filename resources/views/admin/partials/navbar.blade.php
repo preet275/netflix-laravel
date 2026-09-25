@@ -8,12 +8,6 @@
             <i class="bi bi-list"></i>
 
         </button>
-
-        {{-- Page title --}}
-        <span class="navbar-title">
-            Admin Panel
-        </span>
-
     </div>
 
 
