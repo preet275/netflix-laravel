@@ -430,3 +430,44 @@
     color: #aaaaaa;
     cursor: not-allowed;
 }
+
+/* Movie poster preview */
+.poster-preview-box {
+    position: relative;
+    width: 120px;
+    margin-top: 15px;
+}
+
+.poster-preview-box img {
+    width: 120px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: none;
+}
+
+/* Remove button */
+.remove-poster {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: none;
+    background: #e50914;
+    color: #fff;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+
+/* Current movie poster */
+.current-poster {
+    width: 120px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 6px;
+}

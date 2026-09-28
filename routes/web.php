@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MovieController;
 // Show login page at root URL
 Route::get('/', [AuthController::class, 'login'])
     ->name('admin.login');
@@ -47,4 +48,28 @@ Route::prefix('admin')
         // Delete Category
         Route::post('/categories/{id}/delete', [CategoryController::class, 'destroy'])
             ->name('admin.categories.destroy');
+
+        // Movies list
+        Route::get('/movies', [MovieController::class, 'index'])
+            ->name('admin.movies.index');
+
+        // Show add movie form
+        Route::get('/movies/create', [MovieController::class, 'create'])
+            ->name('admin.movies.create');
+
+        // Store new movie
+        Route::post('/movies', [MovieController::class, 'store'])
+            ->name('admin.movies.store');
+
+        // Show edit movie form
+        Route::get('/movies/{id}/edit', [MovieController::class, 'edit'])
+            ->name('admin.movies.edit');
+
+        // Update movie
+        Route::post('/movies/{id}/update', [MovieController::class, 'update'])
+            ->name('admin.movies.update');
+
+        // Delete movie
+        Route::post('/movies/{id}/delete', [MovieController::class, 'destroy'])
+            ->name('admin.movies.destroy');
     });

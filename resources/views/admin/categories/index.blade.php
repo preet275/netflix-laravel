@@ -61,7 +61,7 @@
                                 </a>
 
                                 <form method="POST" action="{{ route('admin.categories.destroy', $category->id) }}"
-                                    style="display: inline;">
+                                    style="display: inline;" class="delete-form">
 
                                     @csrf
 

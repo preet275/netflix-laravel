@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         // Get all categories from database
-        $categories = Category::latest()->paginate(1);
+        $categories = Category::latest()->paginate(10);
 
         // Send categories to the index view
         return view('admin.categories.index', compact('categories'));

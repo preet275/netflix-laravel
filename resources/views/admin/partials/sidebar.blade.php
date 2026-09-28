@@ -28,7 +28,8 @@
         {{-- Movies --}}
         <li class="sidebar-item">
 
-            <a href="#" class="sidebar-link">
+            <a href="{{ route('admin.movies.index') }}"
+                class="sidebar-link {{ request()->routeIs('admin.movies.*') ? 'active' : '' }}">
 
                 <i class="bi bi-film"></i>
 
