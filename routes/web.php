@@ -5,20 +5,31 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MovieController;
-// Show login page at root URL
-Route::get('/', [AuthController::class, 'login'])
-    ->name('admin.login');
 
-// Handle login form submission
-Route::post('/login', [AuthController::class, 'authenticate'])
-    ->name('admin.authenticate');
+// Site home
+Route::get('/', function () {
+    return view('site.home');
+})->name('home');
 
+
+Route::get('/login', function () {
+    return view('site.auth.login');
+})->name('site.login');
 
 // ADMIN PANEL 
 
 Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
+
+        // Show login page at root URL
+        Route::get('/', [AuthController::class, 'login'])
+            ->name('admin.login');
+
+        // Handle login form submission
+        Route::post('/login', [AuthController::class, 'authenticate'])
+            ->name('admin.authenticate');
+
         // Admin dashboard
         Route::get('/home', [DashboardController::class, 'index'])->name('admin.home');
         // Admin logout
