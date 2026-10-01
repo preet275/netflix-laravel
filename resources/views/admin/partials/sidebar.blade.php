@@ -52,14 +52,15 @@
 
         </li>
 
-        {{-- Users --}}
+        {{-- Members --}}
         <li class="sidebar-item">
 
-            <a href="#" class="sidebar-link">
+            <a href="{{ route('members.index') }}"
+                class="sidebar-link {{ request()->routeIs('members.*') ? 'active' : '' }}">
 
-                <i class="bi bi-people-fill"></i>
+               <i class="bi bi-people-fill"></i>
 
-                <span>Users</span>
+                <span>Members</span>
 
             </a>
 

@@ -65,3 +65,4 @@ prevButton.addEventListener('click', function () {
 
 // Set initial button state
 updateButtons();
+

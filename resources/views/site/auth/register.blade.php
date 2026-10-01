@@ -11,46 +11,56 @@
             </a>
 
         </div>
-        <!-- Login box -->
+
+        <!-- Registration box -->
         <div class="login-box">
 
-            <h1>Enter your info to sign in</h1>
-            <h2>Or get started with a new account.</h2>
-            <form>
+            <h1>Create your account</h1>
+
+            <h2>Enter your details to get started.</h2>
+
+            <form action="{{ route('register.store') }}" method="POST">
+
+                @csrf
+
+                <!-- Name -->
+                <input type="text" name="name" placeholder="Name">
+
+                @error('name')
+                    <span class="text-danger d-block mb-2">{{ $message }}</span>
+                @enderror
 
                 <!-- Email -->
                 <input type="email" name="email" placeholder="Email">
 
+                @error('email')
+                    <span class="text-danger d-block mb-2">{{ $message }}</span>
+                @enderror
+
                 <!-- Password -->
                 <input type="password" name="password" placeholder="Password">
 
-                <!-- Login button -->
+                @error('password')
+                    <span class="text-danger d-block mb-2">{{ $message }}</span>
+                @enderror
+
+
+
+                <!-- Confirm password -->
+                <input type="password" name="password_confirmation" placeholder="Confirm password">
+
+                <!-- Register button -->
                 <button type="submit">
-                    Sign In
+                    Register
                 </button>
 
             </form>
 
-            <!-- Get Help -->
-            <div class="dropdown get-help">
-
-                <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Get Help
-                </span>
-
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="dropdown-item" href="{{ route('register') }}">
-                            Create Account
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-
         </div>
+
     </div>
-    <!-- Login footer -->
+
+    <!-- Registration footer -->
     <footer class="login-footer">
 
         <p>Questions? Call 000-800-919-1743 (Toll-Free)</p>
@@ -68,7 +78,6 @@
             <div class="col-6 col-lg-3">
                 <a href="#">Help Centre</a>
                 <a href="#">Corporate Information</a>
-
             </div>
 
             <!-- Column 3 -->

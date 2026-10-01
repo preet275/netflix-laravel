@@ -5,7 +5,8 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MovieController;
-
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Admin\MemberController;
 // Site home
 Route::get('/', function () {
     return view('site.home');
@@ -16,19 +17,29 @@ Route::get('/login', function () {
     return view('site.auth.login');
 })->name('site.login');
 
-// ADMIN PANEL 
+// Registration page
+Route::get('/register', [RegisterController::class, 'show'])
+    ->name('register');
 
+// Handle registration form submission
+Route::post('/register', [RegisterController::class, 'store'])
+    ->name('register.store');
+
+// ADMIN LOGIN
+
+// Show admin login page
+Route::get('/admin', [AuthController::class, 'login'])
+    ->name('admin.login');
+
+// Handle admin login form submission
+Route::post('/admin/login', [AuthController::class, 'authenticate'])
+    ->name('admin.authenticate');
+
+
+// ADMIN PANEL 
 Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
-
-        // Show login page at root URL
-        Route::get('/', [AuthController::class, 'login'])
-            ->name('admin.login');
-
-        // Handle login form submission
-        Route::post('/login', [AuthController::class, 'authenticate'])
-            ->name('admin.authenticate');
 
         // Admin dashboard
         Route::get('/home', [DashboardController::class, 'index'])->name('admin.home');
@@ -83,4 +94,19 @@ Route::prefix('admin')
         // Delete movie
         Route::post('/movies/{id}/delete', [MovieController::class, 'destroy'])
             ->name('admin.movies.destroy');
+
+        // Members
+        Route::get('/members', [MemberController::class, 'index'])
+            ->name('members.index');
+        // Approve member
+        Route::post('/members/{member}/approve', [MemberController::class, 'approve'])
+            ->name('members.approve');
+
+        // Reject member
+        Route::post('/members/{member}/reject', [MemberController::class, 'reject'])
+            ->name('members.reject');
+
+        // Set member status back to pending
+        Route::post('/members/{member}/pending', [MemberController::class, 'pending'])
+            ->name('members.pending');
     });
