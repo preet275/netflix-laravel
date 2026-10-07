@@ -2,15 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Member extends Model
+class Member extends Authenticatable
 {
-       // Fields that can be filled during registration
+    // Fields that can be filled during registration
     protected $fillable = [
         'name',
         'email',
         'password',
         'status',
+    ];
+
+    // Hide sensitive fields
+    protected $hidden = [
+        'password',
+        'remember_token',
     ];
 }

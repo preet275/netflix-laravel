@@ -16,13 +16,21 @@
 
             <h1>Enter your info to sign in</h1>
             <h2>Or get started with a new account.</h2>
-            <form>
-
+            <form method="POST" action="{{ route('site.login.authenticate') }}">
+                @csrf
                 <!-- Email -->
                 <input type="email" name="email" placeholder="Email">
 
+                @error('email')
+                    <span class="text-danger d-block mb-2">{{ $message }}</span>
+                @enderror
+
                 <!-- Password -->
                 <input type="password" name="password" placeholder="Password">
+
+                @error('password')
+                    <span class="text-danger d-block mb-2">{{ $message }}</span>
+                @enderror
 
                 <!-- Login button -->
                 <button type="submit">

@@ -7,15 +7,11 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MovieController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\MemberController;
+use App\Http\Controllers\MemberAuthController;
 // Site home
 Route::get('/', function () {
     return view('site.home');
 })->name('home');
-
-
-Route::get('/login', function () {
-    return view('site.auth.login');
-})->name('site.login');
 
 // Registration page
 Route::get('/register', [RegisterController::class, 'show'])
@@ -24,6 +20,25 @@ Route::get('/register', [RegisterController::class, 'show'])
 // Handle registration form submission
 Route::post('/register', [RegisterController::class, 'store'])
     ->name('register.store');
+
+// Member login routes
+Route::get('/login', [MemberAuthController::class, 'login'])
+    ->name('site.login');
+
+Route::post('/login', [MemberAuthController::class, 'authenticate'])
+    ->name('site.login.authenticate');
+
+// Public Netflix browse page
+Route::middleware('member')->group(function () {
+
+    // Member browse page
+    Route::get('/browse', function () {
+        return view('site.browse.home');
+    })->name('browse');
+    // Member logout
+    Route::post('/logout', [MemberAuthController::class, 'logout'])
+        ->name('member.logout');
+});
 
 // ADMIN LOGIN
 
